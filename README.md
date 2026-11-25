@@ -1,4 +1,10 @@
-# dsh-sharing-memory-sync
+> **Moved:** this plugin now lives under
+> [`zehank/interharness-sharing-memory`](https://github.com/zehank/interharness-sharing-memory/tree/main/harnesses/dsh) → `harnesses/dsh`.
+> This standalone repository is archived; install from the umbrella with
+> `dsh plugin --profile desktop add github:zehank/interharness-sharing-memory#path:harnesses/dsh`.
+> macOS 上已装的 `link:` 不受影响。
+
+# DSH sharing memory sync (`harnesses/dsh`)
 
 DSH（dsh-mnemon）↔ Antigravity `local-memory` 统一总记忆库（[`zehank/sharing-memory`](https://github.com/zehank/sharing-memory)）双向同步插件。
 
@@ -10,6 +16,8 @@ DSH（dsh-mnemon）↔ Antigravity `local-memory` 统一总记忆库（[`zehank/
 
 ## 安装
 
+本插件现在放在 [Interharness Sharing Memory](https://github.com/zehank/interharness-sharing-memory) 的 `harnesses/dsh/` 下，和 Antigravity、Codex 的集成共用同一个 Local Memory 数据目录。
+
 先确认目标机器已有：
 
 1. **Node.js ≥ 22.5**（`node -v` 能输出版本；插件会自动找 Node，找不到再手动配 `nodePath`）
@@ -17,23 +25,18 @@ DSH（dsh-mnemon）↔ Antigravity `local-memory` 统一总记忆库（[`zehank/
 3. Antigravity 的 **local-memory** 插件（`~/.gemini/config/plugins/local-memory/`）
 4. **sharing-memory** 已绑定并同步（`~/.gemini/memory/sync/`，`config.json` 里固定 `deviceId`）
 
-然后任选一种装进 `desktop` profile：
+推荐直接从 umbrella 仓库的子目录安装：
 
 ```bash
-# macOS / Linux
-dsh plugin --profile desktop add github:zehank/dsh-sharing-memory-sync
+# macOS / Linux / Windows
+dsh plugin --profile desktop add github:zehank/interharness-sharing-memory#path:harnesses/dsh
 ```
 
-```powershell
-# Windows
-dsh plugin --profile desktop add github:zehank/dsh-sharing-memory-sync
-```
-
-或者 clone 下来本地安装：
+如果所用 pnpm 版本不支持 `#path:` 子目录安装，就 clone 整个仓库再本地安装：
 
 ```bash
-git clone git@github.com:zehank/dsh-sharing-memory-sync.git
-dsh plugin --profile desktop add /绝对路径/dsh-sharing-memory-sync
+git clone https://github.com/zehank/interharness-sharing-memory.git
+dsh plugin --profile desktop add /绝对路径/interharness-sharing-memory/harnesses/dsh
 ```
 
 装完重启 DeepSeek Harness（新插件 bundle 需要重新加载），在聊天里看到 `sharing_memory_sync` / `sharing_memory_status` 两个工具即成功。

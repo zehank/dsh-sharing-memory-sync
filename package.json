@@ -1,6 +1,6 @@
 {
   "name": "@local/sharing-memory-sync",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "private": true,
   "type": "module",
   "description": "Bidirectional, UID-stable sync between dsh-mnemon and the Antigravity local-memory unified store (zehank/sharing-memory).",
@@ -15,9 +15,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zehank/dsh-sharing-memory-sync.git"
+    "url": "git+https://github.com/zehank/interharness-sharing-memory.git",
+    "directory": "harnesses/dsh"
   },
-  "homepage": "https://github.com/zehank/dsh-sharing-memory-sync",
+  "homepage": "https://github.com/zehank/interharness-sharing-memory/tree/main/harnesses/dsh",
   "license": "MIT",
   "exports": {
     ".": "./index.js",
